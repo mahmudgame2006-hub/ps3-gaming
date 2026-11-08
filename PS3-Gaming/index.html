@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PS3 Gaming</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%231e6bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 3 57 17.5v29L32 61 7 46.5v-29Z' fill='%23070b14' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M19 26h26a8 8 0 0 1 7.6 10.5l-2.4 7.2a4.5 4.5 0 0 1-7.7 1.4L39 41H25l-3.5 4.1a4.5 4.5 0 0 1-7.7-1.4l-2.4-7.2A8 8 0 0 1 19 26Z' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="intro-aktif">
+<div id="intro" aria-label="Memuat PS3 Gaming">
+  <div class="intro-cincin"></div><div class="intro-cincin c2"></div><div class="intro-cincin c3"></div>
+  <div class="intro-isi">
+    <svg class="intro-logo" viewBox="0 0 64 64">
+      <defs><linearGradient id="gIntro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19e6ff"/><stop offset="1" stop-color="#0a7cff"/></linearGradient></defs>
+      <path class="garis" d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" fill="rgba(2,8,20,.85)" stroke="url(#gIntro)" stroke-width="3"/>
+      <g class="isi-stik">
+        <path d="M19 25h26a8 8 0 0 1 7.6 10.5l-2.4 7.2a4.5 4.5 0 0 1-7.7 1.4L39 40H25l-3.5 4.1a4.5 4.5 0 0 1-7.7-1.4l-2.4-7.2A8 8 0 0 1 19 25Z" fill="url(#gIntro)"/>
+        <path d="M20.5 29.5v6M17.5 32.5h6" stroke="#020814" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="42" cy="30.5" r="1.9" fill="#020814"/><circle cx="46" cy="34.5" r="1.9" fill="#020814"/>
+        <text x="32" y="36.2" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="900" font-size="8.5" fill="#020814">3</text>
+      </g>
+    </svg>
+    <div class="intro-judul"><span style="animation-delay:1.00s">P</span><span style="animation-delay:1.07s">S</span><span style="animation-delay:1.14s">3</span><span class="sp"></span><span style="animation-delay:1.28s">G</span><span style="animation-delay:1.35s">A</span><span style="animation-delay:1.42s">M</span><span style="animation-delay:1.49s">I</span><span style="animation-delay:1.56s">N</span><span style="animation-delay:1.63s">G</span></div>
+    <div class="intro-sub">Install &amp; Update</div>
+    <div class="intro-bar"><i id="introBar"></i></div>
+    <div class="intro-persen" id="introPersen">0%</div>
+  </div>
+  <div class="intro-kilat"></div>
+  <div class="intro-lewati">Klik untuk masuk</div>
+</div>
+<canvas id="percikan"></canvas>
+<div id="latar" aria-hidden="true">
+  <div class="tema t-beranda on">
+    <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+    <svg class="hex-besar" viewBox="0 0 200 200"><g fill="none" stroke="url(#gradLogo)"><path d="M100 4 183 52v96l-83 48-83-48V52Z" stroke-width="1.2"/><path d="M100 24 166 62v76l-66 38-66-38V62Z" stroke-width=".6" stroke-dasharray="4 6"/><path d="M100 46 147 73v54l-47 27-47-27V73Z" stroke-width=".9"/></g></svg>
+    <svg class="hex-besar kecil" viewBox="0 0 200 200"><g fill="none" stroke="url(#gradLogo)"><path d="M100 4 183 52v96l-83 48-83-48V52Z" stroke-width="1.2"/><path d="M100 24 166 62v76l-66 38-66-38V62Z" stroke-width=".6" stroke-dasharray="4 6"/><path d="M100 46 147 73v54l-47 27-47-27V73Z" stroke-width=".9"/></g></svg>
+    <div class="cakrawala"></div><div class="lantai"></div><div class="sinar"></div>
+  </div>
+  <div class="tema t-bola"><div class="aurora b1"></div><div class="aurora b2"></div>
+  <div class="lampu l1"></div><div class="lampu l2"></div>
+  <div class="titik-lampu k1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="titik-lampu k2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="lapangan"><div class="lapangan-bidang"><svg viewBox="0 0 1000 600" preserveAspectRatio="none"><g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3">
+<rect x="40" y="20" width="920" height="560"/><line x1="40" y1="300" x2="960" y2="300"/><circle cx="500" cy="300" r="80"/><circle cx="500" cy="300" r="5" fill="#fff"/>
+<rect x="320" y="20" width="360" height="110"/><rect x="420" y="20" width="160" height="45"/><path d="M440 130a60 60 0 0 0 120 0"/>
+<rect x="320" y="470" width="360" height="110"/><rect x="420" y="535" width="160" height="45"/><path d="M440 470a60 60 0 0 1 120 0"/></g></svg></div></div><div class="bola-melayang" style="--u:62.67px;--y:-6.98vh;--t:33.72s;top:18.98%;animation-delay:-16.08s;color:#86efac"><svg viewBox="0 0 24 24"><use href="#i-bola"/></svg></div><div class="bola-melayang" style="--u:65.6px;--y:-8.84vh;--t:31.13s;top:17.06%;animation-delay:-13.01s;color:#86efac"><svg viewBox="0 0 24 24"><use href="#i-bola"/></svg></div><div class="bola-melayang" style="--u:44.89px;--y:-8.19vh;--t:29.64s;top:60.48%;animation-delay:-3.71s;color:#86efac"><svg viewBox="0 0 24 24"><use href="#i-bola"/></svg></div><div class="bola-melayang" style="--u:55.63px;--y:2.55vh;--t:39.06s;top:46.74%;animation-delay:-11.9s;color:#86efac"><svg viewBox="0 0 24 24"><use href="#i-bola"/></svg></div></div>
+  <div class="tema t-update"><div class="aurora u1"></div><div class="aurora u2"></div><svg class="sirkuit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><path d="M452 47 L254 47 L457 47 L457 -39 L457 -194"/><path d="M199 560 L199 373 L199 513 L351 513"/><path d="M613 254 L613 174 L613 321 L613 399 L715 399"/><path d="M1550 350 L1550 420 L1550 280 L1762 280 L1839 280"/><path d="M191 276 L191 201 L191 375 L422 375 L572 375 L386 375 L479 375"/><path d="M1512 253 L1592 253 L1792 253 L1622 253 L1622 419 L1622 538 L1524 538"/><path d="M475 674 L348 674 L181 674 L181 766 L181 590"/><path d="M1597 895 L1683 895 L1758 895 L1586 895 L1799 895 L1594 895 L1441 895"/><path d="M1256 26 L1256 124 L1256 277 L1072 277"/><path d="M954 491 L868 491 L868 673 L868 481 L965 481 L965 286 L727 286"/><path d="M534 530 L534 647 L534 764 L534 643 L534 532 L534 599"/><path d="M57 809 L-180 809 L-180 983 L-180 1136 L-298 1136 L-186 1136"/><path d="M988 639 L1212 639 L1053 639 L1053 457"/><path d="M365 444 L543 444 L298 444 L231 444 L458 444 L686 444"/><path d="M717 159 L523 159 L523 -12 L523 -126 L389 -126"/><path d="M1026 246 L1119 246 L1296 246 L1296 434 L1102 434 L1102 540"/><path d="M1246 4 L1464 4 L1464 -139 L1464 -52 L1464 -175"/><path d="M391 283 L391 350 L391 177 L154 177"/><path d="M567 463 L567 270 L567 381 L567 215 L707 215 L538 215 L798 215"/><path d="M250 795 L250 891 L71 891 L-90 891 L-90 774"/><path d="M330 723 L330 869 L471 869 L535 869 L707 869 L707 1013 L707 1204"/><path d="M131 115 L131 34 L-128 34 L-296 34 L-296 197"/><path d="M305 549 L305 418 L137 418 L137 482 L137 563 L137 486 L-39 486"/><path d="M23 347 L23 440 L-65 440 L-65 512 L155 512 L21 512 L-108 512"/><path d="M710 822 L710 759 L519 759 L606 759"/><path d="M1348 838 L1348 1027 L1230 1027 L1067 1027 L1067 934 L1237 934 L1007 934"/><path class="aliran" style="--t:8.21s;animation-delay:-6.96s" d="M452 47 L254 47 L457 47 L457 -39 L457 -194"/><path class="aliran" style="--t:7.35s;animation-delay:-2.26s" d="M613 254 L613 174 L613 321 L613 399 L715 399"/><path class="aliran" style="--t:5.21s;animation-delay:-2.34s" d="M191 276 L191 201 L191 375 L422 375 L572 375 L386 375 L479 375"/><path class="aliran" style="--t:6.3s;animation-delay:-1.26s" d="M475 674 L348 674 L181 674 L181 766 L181 590"/><path class="aliran" style="--t:6.23s;animation-delay:-2.11s" d="M1256 26 L1256 124 L1256 277 L1072 277"/><path class="aliran" style="--t:8.81s;animation-delay:-7.78s" d="M534 530 L534 647 L534 764 L534 643 L534 532 L534 599"/><path class="aliran" style="--t:6.74s;animation-delay:-1.96s" d="M988 639 L1212 639 L1053 639 L1053 457"/><path class="aliran" style="--t:8.83s;animation-delay:-2.48s" d="M717 159 L523 159 L523 -12 L523 -126 L389 -126"/><path class="aliran" style="--t:5.78s;animation-delay:-0.01s" d="M1246 4 L1464 4 L1464 -139 L1464 -52 L1464 -175"/><path class="aliran" style="--t:5.91s;animation-delay:-3.8s" d="M567 463 L567 270 L567 381 L567 215 L707 215 L538 215 L798 215"/><path class="aliran" style="--t:6.51s;animation-delay:-1.61s" d="M330 723 L330 869 L471 869 L535 869 L707 869 L707 1013 L707 1204"/><path class="aliran" style="--t:6.52s;animation-delay:-0.04s" d="M305 549 L305 418 L137 418 L137 482 L137 563 L137 486 L-39 486"/><path class="aliran" style="--t:5.32s;animation-delay:-0.72s" d="M710 822 L710 759 L519 759 L606 759"/><circle cx="457" cy="-194" r="5"/><circle cx="351" cy="513" r="5"/><circle cx="715" cy="399" r="5"/><circle cx="1839" cy="280" r="5"/><circle cx="479" cy="375" r="5"/><circle cx="1524" cy="538" r="5"/><circle cx="181" cy="590" r="5"/><circle cx="1441" cy="895" r="5"/><circle cx="1072" cy="277" r="5"/><circle cx="727" cy="286" r="5"/><circle cx="534" cy="599" r="5"/><circle cx="-186" cy="1136" r="5"/><circle cx="1053" cy="457" r="5"/><circle cx="686" cy="444" r="5"/><circle cx="389" cy="-126" r="5"/><circle cx="1102" cy="540" r="5"/><circle cx="1464" cy="-175" r="5"/><circle cx="154" cy="177" r="5"/><circle cx="798" cy="215" r="5"/><circle cx="-90" cy="774" r="5"/><circle cx="707" cy="1204" r="5"/><circle cx="-296" cy="197" r="5"/><circle cx="-39" cy="486" r="5"/><circle cx="-108" cy="512" r="5"/><circle cx="606" cy="759" r="5"/><circle cx="1007" cy="934" r="5"/></svg><div class="hujan-data"><span style="--t:10.6s;--d:-0.67s">110001110100100000</span><span style="--t:7.38s;--d:-10.19s">110001101000110100011</span><span style="--t:14.61s;--d:-1.23s">000011100101100111111001010</span><span style="--t:9.61s;--d:-1.22s">1110000011010101110001111011110101</span><span style="--t:13.76s;--d:-13.43s">001110110111010010011</span><span style="--t:11.6s;--d:-3.04s">10100011011000111111110111000</span><span style="--t:7.68s;--d:-8.01s">011110000010101100111011101110001</span><span style="--t:15.07s;--d:-6.15s">11000111001110000001000000101100</span><span style="--t:7.63s;--d:-8.39s">110001111010001100011010</span><span style="--t:13.01s;--d:-14.8s">1011110010010100101101001</span><span style="--t:10.75s;--d:-10.64s">1000010001110001001011</span><span style="--t:14.55s;--d:-15.76s">00001011001111001011011101010101</span><span style="--t:7.56s;--d:-14.72s">00111101111000001111110100</span><span style="--t:14.22s;--d:-11.82s">0111100100100110100100</span><span style="--t:7.87s;--d:-7.98s">00011001111111010000010101100010</span><span style="--t:7.92s;--d:-7.6s">1101000000101100100110001</span><span style="--t:7.34s;--d:-11.72s">011101000110101000111111</span><span style="--t:15.58s;--d:-5.0s">11010110010100111000001010011</span><span style="--t:8.46s;--d:-2.75s">01101001101000101000</span><span style="--t:10.6s;--d:-8.29s">100000010111110111110001101101</span><span style="--t:10.6s;--d:-1.07s">11010000100100000011000110111</span><span style="--t:8.29s;--d:-8.04s">010110001011101001101111110110100</span></div></div>
+  <div class="tema t-game"><div class="aurora g1"></div><div class="aurora g2"></div><div class="piksel"></div><div class="garis-neon"></div><div class="ikon-terbang" style="--u:66.15px;--t:11.75s;--d:-2.96s;--r:0.81deg;--w:#22d3ee;left:60.81%;top:86.66%"><svg viewBox="0 0 24 24"><use href="#i-petir"/></svg></div><div class="ikon-terbang" style="--u:85.56px;--t:11.37s;--d:-7.33s;--r:12.36deg;--w:#818cf8;left:15.74%;top:55.75%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3 21 12 12 21 3 12z"/></svg></div><div class="ikon-terbang" style="--u:53.9px;--t:8.18s;--d:-0.48s;--r:-0.58deg;--w:#e879f9;left:4.05%;top:4.22%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 4v16M4 12h16"/></svg></div><div class="ikon-terbang" style="--u:46.83px;--t:9.14s;--d:-5.34s;--r:-4.34deg;--w:#22d3ee;left:56.2%;top:21.15%"><svg viewBox="0 0 24 24"><use href="#i-petir"/></svg></div><div class="ikon-terbang" style="--u:79.37px;--t:6.95s;--d:-0.14s;--r:15.08deg;--w:#818cf8;left:43.48%;top:9.35%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2 21 7v10l-9 5-9-5V7z"/></svg></div><div class="ikon-terbang" style="--u:82.02px;--t:10.69s;--d:-4.02s;--r:-11.79deg;--w:#e879f9;left:7.16%;top:72.95%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 4v16M4 12h16"/></svg></div><div class="ikon-terbang" style="--u:64.87px;--t:9.47s;--d:-6.02s;--r:0.88deg;--w:#f472b6;left:24.86%;top:79.89%"><svg viewBox="0 0 24 24"><use href="#i-game"/></svg></div><div class="ikon-terbang" style="--u:31.81px;--t:6.15s;--d:-1.86s;--r:-17.04deg;--w:#e879f9;left:3.14%;top:50.28%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2 21 7v10l-9 5-9-5V7z"/></svg></div><div class="ikon-terbang" style="--u:36.82px;--t:7.2s;--d:-6.08s;--r:0.35deg;--w:#f472b6;left:76.83%;top:18.67%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 4v16M4 12h16"/></svg></div><div class="ikon-terbang" style="--u:31.95px;--t:9.76s;--d:-9.94s;--r:11.22deg;--w:#f472b6;left:67.82%;top:4.53%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3 21 12 12 21 3 12z"/></svg></div><div class="ikon-terbang" style="--u:74.2px;--t:8.79s;--d:-7.42s;--r:-2.38deg;--w:#818cf8;left:93.69%;top:25.96%"><svg viewBox="0 0 24 24"><use href="#i-game"/></svg></div><div class="ikon-terbang" style="--u:35.64px;--t:11.35s;--d:-9.25s;--r:22.14deg;--w:#22d3ee;left:67.47%;top:26.34%"><svg viewBox="0 0 24 24"><use href="#i-petir"/></svg></div><div class="ikon-terbang" style="--u:70.11px;--t:10.11s;--d:-9.17s;--r:23.59deg;--w:#22d3ee;left:61.06%;top:85.07%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2 21 7v10l-9 5-9-5V7z"/></svg></div><div class="ikon-terbang" style="--u:33.3px;--t:9.04s;--d:-1.7s;--r:20.24deg;--w:#818cf8;left:88.91%;top:66.68%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 4v16M4 12h16"/></svg></div><div class="ikon-terbang" style="--u:39.9px;--t:8.33s;--d:-6.01s;--r:-6.03deg;--w:#f472b6;left:45.44%;top:48.57%"><svg viewBox="0 0 24 24"><use href="#i-game"/></svg></div><div class="ikon-terbang" style="--u:81.17px;--t:8.62s;--d:-7.25s;--r:3.52deg;--w:#22d3ee;left:74.61%;top:36.89%"><svg viewBox="0 0 24 24"><use href="#i-petir"/></svg></div><div class="ikon-terbang" style="--u:32.82px;--t:11.46s;--d:-1.45s;--r:-23.65deg;--w:#e879f9;left:59.22%;top:17.59%"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2 21 7v10l-9 5-9-5V7z"/></svg></div><div class="ikon-terbang" style="--u:71.45px;--t:6.19s;--d:-1.38s;--r:7.18deg;--w:#e879f9;left:66.12%;top:65.89%"><svg viewBox="0 0 24 24"><use href="#i-game"/></svg></div></div>
+  <div class="tema t-harga"><div class="aurora h1"></div><div class="aurora h2"></div><div class="sinar-emas"></div><div class="koin" style="--u:34.11px;--t:24.62s;--d:-12.06s;left:3.17%"></div><div class="koin" style="--u:54.76px;--t:19.24s;--d:-5.78s;left:93.22%"></div><div class="koin" style="--u:34.66px;--t:14.27s;--d:-6.69s;left:70.66%"></div><div class="koin" style="--u:24.2px;--t:16.91s;--d:-22.18s;left:67.21%"></div><div class="koin" style="--u:45.15px;--t:21.77s;--d:-22.0s;left:64.11%"></div><div class="koin" style="--u:47.49px;--t:24.53s;--d:-16.68s;left:56.29%"></div><div class="koin" style="--u:32.23px;--t:16.18s;--d:-3.23s;left:42.23%"></div><div class="koin" style="--u:33.35px;--t:22.41s;--d:-23.26s;left:24.54%"></div><div class="koin" style="--u:38.4px;--t:22.55s;--d:-4.07s;left:81.0%"></div><div class="kilau" style="--u:23.7px;--t:4.4s;--d:-1.0s;left:92.68%;top:52.12%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:20.63px;--t:4.7s;--d:-3.78s;left:69.57%;top:38.31%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:13.95px;--t:3.01s;--d:-0.17s;left:92.18%;top:86.82%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:22.06px;--t:2.72s;--d:-3.76s;left:62.06%;top:46.89%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:12.12px;--t:4.48s;--d:-3.23s;left:29.97%;top:33.96%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:14.18px;--t:3.38s;--d:-4.65s;left:6.6%;top:72.91%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:24.57px;--t:4.42s;--d:-3.01s;left:47.23%;top:29.46%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:21.93px;--t:4.47s;--d:-0.16s;left:51.27%;top:12.04%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:17.5px;--t:2.62s;--d:-2.83s;left:69.87%;top:79.16%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:19.19px;--t:3.22s;--d:-2.18s;left:51.74%;top:29.53%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:22.01px;--t:2.63s;--d:-1.74s;left:11.09%;top:66.96%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:23.21px;--t:4.92s;--d:-2.96s;left:92.93%;top:50.39%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:19.25px;--t:2.9s;--d:-4.08s;left:91.14%;top:24.3%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:12.65px;--t:4.85s;--d:-3.83s;left:48.58%;top:94.18%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:18.98px;--t:2.76s;--d:-1.63s;left:11.04%;top:88.42%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:24.27px;--t:4.36s;--d:-2.11s;left:63.36%;top:37.22%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:14.85px;--t:3.57s;--d:-2.72s;left:18.25%;top:93.38%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:20.09px;--t:4.86s;--d:-0.63s;left:58.44%;top:66.41%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:19.69px;--t:2.58s;--d:-2.91s;left:51.56%;top:82.86%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:17.2px;--t:3.88s;--d:-1.62s;left:46.0%;top:66.39%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:14.12px;--t:3.08s;--d:-1.67s;left:63.06%;top:67.08%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:18.12px;--t:3.17s;--d:-3.77s;left:80.52%;top:59.79%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:21.57px;--t:4.94s;--d:-3.62s;left:59.28%;top:35.07%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:13.78px;--t:4.89s;--d:-1.29s;left:92.72%;top:94.53%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:12.63px;--t:4.14s;--d:-0.98s;left:16.34%;top:16.65%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div><div class="kilau" style="--u:14.83px;--t:3.24s;--d:-1.37s;left:12.38%;top:86.85%"><svg viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg></div></div>
+  <div class="tema t-lokasi"><div class="aurora k1"></div><div class="aurora k2"></div><div class="grid-peta"></div><svg class="kontur" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"><path d="M1296,250 L1294,258 L1286,264 L1277,269 L1269,273 L1260,275 L1250,276 L1240,276 L1229,276 L1217,273 L1211,266 L1212,257 L1216,250 L1217,244 L1216,236 L1220,229 L1229,224 L1239,221 L1250,220 L1261,221 L1269,227 L1274,233 L1280,238 L1289,243 L1296,250Z"/><path d="M1337,250 L1329,265 L1311,275 L1296,282 L1284,291 L1268,298 L1250,301 L1230,301 L1210,299 L1191,292 L1182,278 L1185,262 L1189,250 L1186,238 L1183,223 L1191,209 L1210,201 L1230,198 L1250,198 L1269,201 L1284,209 L1295,218 L1310,226 L1328,235 L1337,250Z"/><path d="M1375,250 L1358,270 L1332,283 L1314,295 L1300,311 L1279,326 L1250,331 L1220,327 L1192,320 L1169,307 L1158,287 L1160,267 L1159,250 L1150,231 L1145,208 L1161,188 L1192,180 L1223,179 L1250,179 L1276,181 L1300,189 L1321,200 L1345,212 L1368,228 L1375,250Z"/><path d="M1406,250 L1382,275 L1352,291 L1335,310 L1321,336 L1291,357 L1250,361 L1211,351 L1179,337 L1151,319 L1135,297 L1130,273 L1122,250 L1107,223 L1107,192 L1135,169 L1179,163 L1217,165 L1250,162 L1285,159 L1321,164 L1352,179 L1381,197 L1404,221 L1406,250Z"/><path d="M1429,250 L1404,279 L1378,302 L1363,329 L1345,365 L1303,389 L1250,387 L1205,368 L1169,349 L1134,331 L1107,308 L1091,280 L1077,250 L1064,215 L1073,178 L1114,155 L1169,151 L1212,151 L1250,141 L1296,130 L1345,135 L1383,157 L1411,185 L1431,216 L1429,250Z"/><path d="M1451,250 L1433,284 L1412,315 L1397,353 L1369,394 L1314,417 L1250,406 L1201,379 L1159,360 L1112,346 L1069,323 L1044,289 L1031,250 L1027,208 L1048,168 L1100,145 L1159,140 L1205,133 L1250,112 L1309,95 L1369,106 L1409,138 L1433,176 L1449,213 L1451,250Z"/><path d="M1480,250 L1473,292 L1455,333 L1432,377 L1390,420 L1321,436 L1250,417 L1197,389 L1146,376 L1082,368 L1023,342 L995,298 L992,250 L1002,203 L1032,162 L1087,136 L1146,124 L1195,106 L1250,76 L1323,59 L1390,80 L1427,126 L1446,171 L1466,209 L1480,250Z"/><path d="M1523,250 L1525,302 L1500,351 L1462,398 L1404,437 L1326,447 L1250,427 L1191,405 L1126,400 L1044,394 L975,361 L953,306 L967,250 L988,201 L1018,156 L1069,123 L1126,100 L1182,72 L1250,38 L1335,29 L1404,63 L1437,119 L1457,167 L1491,205 L1523,250Z"/><path d="M1579,250 L1580,312 L1539,367 L1481,412 L1411,446 L1329,456 L1250,442 L1181,430 L1099,432 L1002,424 L933,378 L927,311 L955,250 L978,199 L998,148 L1040,103 L1099,68 L1167,34 L1250,5 L1343,8 L1411,54 L1443,115 L1474,160 L1529,198 L1579,250Z"/><path d="M1641,250 L1629,321 L1563,376 L1489,417 L1416,451 L1334,470 L1250,469 L1167,466 L1070,468 L966,449 L906,389 L915,313 L949,250 L961,196 L964,134 L999,75 L1070,32 L1155,2 L1250,-16 L1346,-2 L1416,49 L1455,106 L1505,147 L1583,187 L1641,250Z"/><path d="M1697,250 L1661,327 L1572,380 L1491,419 L1424,461 L1344,495 L1250,508 L1151,508 L1044,500 L942,466 L894,394 L911,314 L937,250 L927,189 L914,114 L954,42 L1044,-0 L1147,-19 L1250,-24 L1348,-6 L1424,39 L1480,89 L1552,128 L1645,176 L1697,250Z"/><path d="M1734,250 L1673,329 L1572,380 L1497,423 L1441,481 L1359,534 L1250,554 L1137,545 L1027,521 L932,472 L891,395 L901,315 L906,250 L873,179 L855,90 L912,13 L1027,-21 L1145,-26 L1250,-25 L1351,-15 L1441,19 L1518,62 L1608,105 L1701,165 L1734,250Z"/><path d="M346,700 L344,708 L336,714 L327,719 L319,723 L310,725 L300,726 L290,726 L279,726 L267,723 L261,716 L262,707 L266,700 L267,694 L266,686 L270,679 L279,674 L289,671 L300,670 L311,671 L319,677 L324,683 L330,688 L339,693 L346,700Z"/><path d="M387,700 L379,715 L361,725 L346,732 L334,741 L318,748 L300,751 L280,751 L260,749 L241,742 L232,728 L235,712 L239,700 L236,688 L233,673 L241,659 L260,651 L280,648 L300,648 L319,651 L334,659 L345,668 L360,676 L378,685 L387,700Z"/><path d="M425,700 L408,720 L382,733 L364,745 L350,761 L329,776 L300,781 L270,777 L242,770 L219,757 L208,737 L210,717 L209,700 L200,681 L195,658 L211,638 L242,630 L273,629 L300,629 L326,631 L350,639 L371,650 L395,662 L418,678 L425,700Z"/><path d="M456,700 L432,725 L402,741 L385,760 L371,786 L341,807 L300,811 L261,801 L229,787 L201,769 L185,747 L180,723 L172,700 L157,673 L157,642 L185,619 L229,613 L267,615 L300,612 L335,609 L371,614 L402,629 L431,647 L454,671 L456,700Z"/><path d="M479,700 L454,729 L428,752 L413,779 L395,815 L353,839 L300,837 L255,818 L219,799 L184,781 L157,758 L141,730 L127,700 L114,665 L123,628 L164,605 L219,601 L262,601 L300,591 L346,580 L395,585 L433,607 L461,635 L481,666 L479,700Z"/><path d="M501,700 L483,734 L462,765 L447,803 L419,844 L364,867 L300,856 L251,829 L209,810 L162,796 L119,773 L94,739 L81,700 L77,658 L98,618 L150,595 L209,590 L255,583 L300,562 L359,545 L419,556 L459,588 L483,626 L499,663 L501,700Z"/><path d="M530,700 L523,742 L505,783 L482,827 L440,870 L371,886 L300,867 L247,839 L196,826 L132,818 L73,792 L45,748 L42,700 L52,653 L82,612 L137,586 L196,574 L245,556 L300,526 L373,509 L440,530 L477,576 L496,621 L516,659 L530,700Z"/><path d="M573,700 L575,752 L550,801 L512,848 L454,887 L376,897 L300,877 L241,855 L176,850 L94,844 L25,811 L3,756 L17,700 L38,651 L68,606 L119,573 L176,550 L232,522 L300,488 L385,479 L454,513 L487,569 L507,617 L541,655 L573,700Z"/><path d="M629,700 L630,762 L589,817 L531,862 L461,896 L379,906 L300,892 L231,880 L149,882 L52,874 L-17,828 L-23,761 L5,700 L28,649 L48,598 L90,553 L149,518 L217,484 L300,455 L393,458 L461,504 L493,565 L524,610 L579,648 L629,700Z"/><path d="M691,700 L679,771 L613,826 L539,867 L466,901 L384,920 L300,919 L217,916 L120,918 L16,899 L-44,839 L-35,763 L-1,700 L11,646 L14,584 L49,525 L120,482 L205,452 L300,434 L396,448 L466,499 L505,556 L555,597 L633,637 L691,700Z"/><path d="M747,700 L711,777 L622,830 L541,869 L474,911 L394,945 L300,958 L201,958 L94,950 L-8,916 L-56,844 L-39,764 L-13,700 L-23,639 L-36,564 L4,492 L94,450 L197,431 L300,426 L398,444 L474,489 L530,539 L602,578 L695,626 L747,700Z"/><path d="M784,700 L723,779 L622,830 L547,873 L491,931 L409,984 L300,1004 L187,995 L77,971 L-18,922 L-59,845 L-49,765 L-44,700 L-77,629 L-95,540 L-38,463 L77,429 L195,424 L300,425 L401,435 L491,469 L568,512 L658,555 L751,615 L784,700Z"/><path d="M946,800 L944,808 L936,814 L927,819 L919,823 L910,825 L900,826 L890,826 L879,826 L867,823 L861,816 L862,807 L866,800 L867,794 L866,786 L870,779 L879,774 L889,771 L900,770 L911,771 L919,777 L924,783 L930,788 L939,793 L946,800Z"/><path d="M987,800 L979,815 L961,825 L946,832 L934,841 L918,848 L900,851 L880,851 L860,849 L841,842 L832,828 L835,812 L839,800 L836,788 L833,773 L841,759 L860,751 L880,748 L900,748 L919,751 L934,759 L945,768 L960,776 L978,785 L987,800Z"/><path d="M1025,800 L1008,820 L982,833 L964,845 L950,861 L929,876 L900,881 L870,877 L842,870 L819,857 L808,837 L810,817 L809,800 L800,781 L795,758 L811,738 L842,730 L873,729 L900,729 L926,731 L950,739 L971,750 L995,762 L1018,778 L1025,800Z"/><path d="M1056,800 L1032,825 L1002,841 L985,860 L971,886 L941,907 L900,911 L861,901 L829,887 L801,869 L785,847 L780,823 L772,800 L757,773 L757,742 L785,719 L829,713 L867,715 L900,712 L935,709 L971,714 L1002,729 L1031,747 L1054,771 L1056,800Z"/><path d="M1079,800 L1054,829 L1028,852 L1013,879 L995,915 L953,939 L900,937 L855,918 L819,899 L784,881 L757,858 L741,830 L727,800 L714,765 L723,728 L764,705 L819,701 L862,701 L900,691 L946,680 L995,685 L1033,707 L1061,735 L1081,766 L1079,800Z"/><path d="M1101,800 L1083,834 L1062,865 L1047,903 L1019,944 L964,967 L900,956 L851,929 L809,910 L762,896 L719,873 L694,839 L681,800 L677,758 L698,718 L750,695 L809,690 L855,683 L900,662 L959,645 L1019,656 L1059,688 L1083,726 L1099,763 L1101,800Z"/><path d="M1130,800 L1123,842 L1105,883 L1082,927 L1040,970 L971,986 L900,967 L847,939 L796,926 L732,918 L673,892 L645,848 L642,800 L652,753 L682,712 L737,686 L796,674 L845,656 L900,626 L973,609 L1040,630 L1077,676 L1096,721 L1116,759 L1130,800Z"/><path d="M1173,800 L1175,852 L1150,901 L1112,948 L1054,987 L976,997 L900,977 L841,955 L776,950 L694,944 L625,911 L603,856 L617,800 L638,751 L668,706 L719,673 L776,650 L832,622 L900,588 L985,579 L1054,613 L1087,669 L1107,717 L1141,755 L1173,800Z"/><path d="M1229,800 L1230,862 L1189,917 L1131,962 L1061,996 L979,1006 L900,992 L831,980 L749,982 L652,974 L583,928 L577,861 L605,800 L628,749 L648,698 L690,653 L749,618 L817,584 L900,555 L993,558 L1061,604 L1093,665 L1124,710 L1179,748 L1229,800Z"/><path d="M1291,800 L1279,871 L1213,926 L1139,967 L1066,1001 L984,1020 L900,1019 L817,1016 L720,1018 L616,999 L556,939 L565,863 L599,800 L611,746 L614,684 L649,625 L720,582 L805,552 L900,534 L996,548 L1066,599 L1105,656 L1155,697 L1233,737 L1291,800Z"/><path d="M1347,800 L1311,877 L1222,930 L1141,969 L1074,1011 L994,1045 L900,1058 L801,1058 L694,1050 L592,1016 L544,944 L561,864 L587,800 L577,739 L564,664 L604,592 L694,550 L797,531 L900,526 L998,544 L1074,589 L1130,639 L1202,678 L1295,726 L1347,800Z"/><path d="M1384,800 L1323,879 L1222,930 L1147,973 L1091,1031 L1009,1084 L900,1104 L787,1095 L677,1071 L582,1022 L541,945 L551,865 L556,800 L523,729 L505,640 L562,563 L677,529 L795,524 L900,525 L1001,535 L1091,569 L1168,612 L1258,655 L1351,715 L1384,800Z"/></svg><div class="radar"></div><div class="ping" style="left:12%;top:58%"></div></div>
+  <canvas id="partikel"></canvas>
+  
+</div>
+
+<!-- Ikon SVG (dipakai ulang) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="gradLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#1e6bff"/></linearGradient>
+  </defs>
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11 12 4l9 7v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-bola" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m12 7 4 3-1.5 4.5h-5L8 10z"/><path d="M12 7V3.5M16 10l3.5-1.5M14.5 14.5l2 3.5M9.5 14.5l-2 3.5M8 10 4.5 8.5"/></g></symbol>
+  <symbol id="i-update" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"/><path d="M4 3v5h5"/><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M20 21v-5h-5"/></g></symbol>
+  <symbol id="i-game" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10a5 5 0 0 1 4.8 6.4l-1.2 4.2a2.5 2.5 0 0 1-4.3 1L14.5 16h-5l-1.8 2.6a2.5 2.5 0 0 1-4.3-1l-1.2-4.2A5 5 0 0 1 7 7z"/><path d="M8 10.5v3M6.5 12h3"/><circle cx="15.5" cy="11" r=".6" fill="currentColor"/><circle cx="17.5" cy="13" r=".6" fill="currentColor"/></g></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+  <symbol id="i-cek" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></g></symbol>
+  <symbol id="i-panah" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-kiri" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="i-kanan" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-cari" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></g></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></g></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-petir" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+</svg>
+
+<header>
+  <a class="brand" href="#beranda" data-ke="beranda" aria-label="PS3 Gaming">
+    <!-- LOGO PS3 GAMING (original) -->
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 3 57 17.5v29L32 61 7 46.5v-29Z" fill="#070b14" stroke="url(#gradLogo)" stroke-width="3.5"/>
+      <path d="M32 9.5 51.5 20.8" stroke="#fff" stroke-opacity=".35" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M19 25h26a8 8 0 0 1 7.6 10.5l-2.4 7.2a4.5 4.5 0 0 1-7.7 1.4L39 40H25l-3.5 4.1a4.5 4.5 0 0 1-7.7-1.4l-2.4-7.2A8 8 0 0 1 19 25Z" fill="url(#gradLogo)"/>
+      <path d="M20.5 29.5v6M17.5 32.5h6" stroke="#070b14" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="42" cy="30.5" r="1.9" fill="#070b14"/><circle cx="46" cy="34.5" r="1.9" fill="#070b14"/>
+      <text x="32" y="36.2" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="900" font-size="8.5" fill="#070b14">3</text>
+    </svg>
+    <div class="brand-teks">
+      <b>PS3 <span>GAMING</span></b>
+      <small>Install &amp; Update</small>
+    </div>
+  </a>
+  <nav class="tabs" id="tabs">
+    <button class="tab" data-ke="beranda"><svg><use href="#i-home"/></svg><span class="txt">Beranda</span><span class="pendek">Home</span></button>
+    <button class="tab" data-ke="bola"><svg><use href="#i-bola"/></svg><span class="txt">Game Bola</span><span class="pendek">Bola</span></button>
+    <button class="tab" data-ke="update"><svg><use href="#i-update"/></svg><span class="txt">Update 4.91</span><span class="pendek">4.91</span></button>
+    <button class="tab" data-ke="game"><svg><use href="#i-game"/></svg><span class="txt">Daftar Game</span><span class="pendek">Game</span></button>
+    <button class="tab" data-ke="harga"><svg><use href="#i-tag"/></svg><span class="txt">Harga</span><span class="pendek">Harga</span></button>
+    <button class="tab" data-ke="lokasi"><svg><use href="#i-pin"/></svg><span class="txt">Lokasi</span><span class="pendek">Lokasi</span></button>
+    <span class="indikator" id="indikator"></span>
+  </nav>
+</header>
+
+<main id="panggung">
+
+  <!-- BERANDA -->
+  <section class="panel" id="p-beranda">
+    <div class="isi beranda-isi">
+      <div class="hero">
+        <div>
+          <span class="chip"><i></i>PES selalu update &middot; Firmware 4.91</span>
+          <h1>Main Lebih Seru di <em>PS3</em> Kamu</h1>
+          <p class="lead">Pasang game, update patch bola terbaru, dan update sistem PS3 ke versi 4.91. Semua dikerjakan langsung di tempat kami.</p>
+          <div class="tombol">
+            <button class="btn btn-utama" data-ke="game">Lihat Daftar Game <svg><use href="#i-panah"/></svg></button>
+            <button class="btn btn-garis" data-ke="harga">Cek Harga</button>
+          </div>
+          <div class="stat">
+            <div><b id="jmlGame">0</b><small>Game tersedia</small></div>
+            <div><b>4<span>.</span>91</b><small>Versi PS3 terbaru</small></div>
+            <div><b>50<span>K</span></b><small>Mulai dari</small></div>
+          </div>
+        </div>
+        <div class="etalase">
+          <div class="kartu-melayang km1"><div class="lbl"><b>PES Gembox 2027</b><small>Patch musim terbaru</small></div></div>
+          <div class="kartu-melayang km2"><small>Firmware</small><b>4.91</b><span>Terbaru</span></div>
+        </div>
+      </div>
+      <div class="pita-game"><div class="pita-jalan" id="pitaGame"></div></div>
+    </div>
+  </section>
+
+  <!-- GAME BOLA -->
+  <section class="panel" id="p-bola">
+    <div class="isi">
+      <div class="judul">
+        <div><span class="kecil-label">Selalu Update</span><h2>Game <span>Bola</span></h2></div>
+        <p>Pemain, transfer, dan jersey musim terbaru</p>
+      </div>
+      <div class="bola">
+        <div class="bola-gambar">
+          <div class="atas">
+            <span class="badge badge-hijau"><svg><use href="#i-petir"/></svg>SELALU UPDATE</span>
+            <span class="badge badge-gelap">Musim 2026/2027</span>
+          </div>
+          <div class="bawah">
+            <h3>PES &middot; Gembox 2027</h3>
+            <p>Patch eFootball terbaru untuk PS3</p>
+          </div>
+        </div>
+        <div class="bola-info">
+          <div class="kotak">
+            <ul class="daftar-cek">
+              <li><svg><use href="#i-cek"/></svg><div>Transfer pemain terbaru<small>Skuad tim mengikuti bursa transfer terakhir</small></div></li>
+              <li><svg><use href="#i-cek"/></svg><div>Jersey &amp; liga musim ini<small>Kostum, logo klub, dan kompetisi terbaru</small></div></li>
+              <li><svg><use href="#i-cek"/></svg><div>Bisa update berkala<small>Datang lagi saat ada patch baru</small></div></li>
+            </ul>
+          </div>
+          <div class="kotak mini-lap">
+            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+              <defs><linearGradient id="rumput" x1="0" x2="1"><stop offset="0" stop-color="#14532d"/><stop offset="1" stop-color="#166534"/></linearGradient></defs>
+              <rect x="4" y="4" width="292" height="142" rx="10" fill="url(#rumput)"/>
+              <g fill="rgba(255,255,255,.06)"><rect x="4" y="4" width="36" height="142"/><rect x="76" y="4" width="36" height="142"/><rect x="148" y="4" width="36" height="142"/><rect x="220" y="4" width="36" height="142"/></g>
+              <g fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.6"><rect x="12" y="12" width="276" height="126" rx="2"/><line x1="150" y1="12" x2="150" y2="138"/><circle cx="150" cy="75" r="20"/><rect x="12" y="45" width="34" height="60"/><rect x="254" y="45" width="34" height="60"/></g>
+              <g class="pemain"><circle class="p1" r="5" fill="#ef4444"/><circle class="p2" r="5" fill="#ef4444"/><circle class="p3" r="5" fill="#3b82f6"/><circle class="p4" r="5" fill="#3b82f6"/></g>
+              <circle class="bolanya" r="3.6" fill="#fff"/>
+            </svg>
+            <div class="mode"><span>Master League</span><span>Exhibition</span><span>2 Pemain</span></div>
+          </div>
+          <div class="kotak">
+            <div class="harga-baris">
+              <div class="harga-besar">Rp50K<small>Pasang game / update bola</small></div>
+              <button class="btn btn-utama" data-ke="lokasi">Datang ke Lokasi <svg><use href="#i-panah"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATE PS3 -->
+  <section class="panel" id="p-update">
+    <div class="isi">
+      <div class="judul">
+        <div><span class="kecil-label">Selalu Update</span><h2>Update Versi <span>PS3</span></h2></div>
+        <p>Firmware terbaru agar game bisa dipasang</p>
+      </div>
+      <div class="fw">
+        <div class="fw-layar">
+          <div class="cincin"></div>
+          <div class="cincin c2"></div>
+          <div class="cincin c3"></div>
+          <svg class="busur" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="none" stroke="url(#gradLogo)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="301.6" id="busur"/></svg>
+          <div class="fw-tengah">
+            <small>Versi Terbaru</small>
+            <b>4.91</b>
+            <span>Tersedia sekarang</span>
+          </div>
+        </div>
+        <div>
+          <div class="kotak">
+            <p style="color:var(--abu);font-size:.92rem">PS3 kamu masih versi lama? Update ke <b style="color:#fff">4.91</b>, versi sistem paling baru, supaya game di daftar kami bisa dipasang dan berjalan lancar.</p>
+            <div class="langkah">
+              <div><b>01</b><p>Bawa PS3 ke lokasi</p></div>
+              <div><b>02</b><p>Cek &amp; update ke 4.91</p></div>
+              <div><b>03</b><p>Siap pasang game</p></div>
+            </div>
+            <div class="tipe" style="margin-bottom:16px">
+              <span>PS3 Fat</span><span>PS3 Slim</span><span>PS3 Super Slim</span>
+            </div>
+            <div class="harga-baris">
+              <div class="harga-besar">Rp100K<small>Update versi PS3</small></div>
+              <button class="btn btn-utama" data-ke="lokasi">Datang ke Lokasi <svg><use href="#i-panah"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAFTAR GAME -->
+  <section class="panel" id="p-game">
+    <div class="isi">
+      <div class="judul">
+        <div><span class="kecil-label">Katalog</span><h2>Daftar <span>Game</span></h2></div>
+        <p>Klik game untuk lihat penjelasannya</p>
+      </div>
+      <div class="alat">
+        <label class="cari"><svg><use href="#i-cari"/></svg><input id="cari" type="search" placeholder="Cari game..." autocomplete="off"></label>
+        <div class="filter" id="filter"></div>
+      </div>
+      <div class="grid-wrap"><div class="grid-game" id="grid"></div></div>
+      <div class="pager">
+        <button class="nav" id="sebelum" aria-label="Sebelumnya"><svg><use href="#i-kiri"/></svg></button>
+        <div class="titik" id="titik"></div>
+        <span class="info-hal" id="infoHal"></span>
+        <button class="nav" id="sesudah" aria-label="Berikutnya"><svg><use href="#i-kanan"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARGA -->
+  <section class="panel" id="p-harga">
+    <div class="isi">
+      <div class="judul">
+        <div><span class="kecil-label">Daftar Harga</span><h2>Layanan <span>Kami</span></h2></div>
+        <p>Semua dikerjakan langsung di lokasi</p>
+      </div>
+      <div class="grid-harga">
+        <button class="harga" data-ke="update">
+          <div class="harga-gbr"><div class="cincin-fw"></div><div class="angka-fw">4.91</div></div>
+          <div class="harga-isi"><h3>Update Versi PS3</h3><p>Update sistem ke versi terbaru 4.91</p><div class="harga-kaki"><div class="angka">100K</div><span class="lihat"><span>Lihat</span><svg><use href="#i-panah"/></svg></span></div></div>
+        </button>
+        <button class="harga unggul" data-ke="bola">
+          <span class="pita badge badge-hijau">PALING LARIS</span>
+          <div class="harga-gbr" data-gbr="Gembox 2027"></div>
+          <div class="harga-isi"><h3>Pasang Game / Update Bola</h3><p>Pasang game pilihan atau patch PES terbaru</p><div class="harga-kaki"><div class="angka">50K</div><span class="lihat"><span>Lihat</span><svg><use href="#i-panah"/></svg></span></div></div>
+        </button>
+        <button class="harga" data-layanan="multiman">
+          <div class="harga-gbr" data-gbr="multiman"></div>
+          <div class="harga-isi"><h3>Pasang multiMAN / MMCM</h3><p>Aplikasi pengelola game di PS3</p><div class="harga-kaki"><div class="angka">100K</div><span class="lihat"><span>Lihat</span><svg><use href="#i-panah"/></svg></span></div></div>
+        </button>
+        <button class="harga" data-layanan="hen">
+          <div class="harga-gbr" data-gbr="hen"></div>
+          <div class="harga-isi"><h3>Pasang HEN</h3><p>Pemasangan HEN di PS3 kamu</p><div class="harga-kaki"><div class="angka">100K</div><span class="lihat"><span>Lihat</span><svg><use href="#i-panah"/></svg></span></div></div>
+        </button>
+      </div>
+      <div class="catatan-harga"><svg><use href="#i-info"/></svg>Website ini hanya informasi. Pembayaran &amp; pengerjaan langsung di lokasi. <a href="https://wa.me/6282261865971" target="_blank" rel="noopener" style="color:#4ade80;font-weight:600">Tanya via WA</a></div>
+    </div>
+  </section>
+
+  <!-- LOKASI -->
+  <section class="panel" id="p-lokasi">
+    <div class="isi">
+      <div class="judul">
+        <div><span class="kecil-label">Datang Langsung</span><h2>Lokasi <span>Kami</span></h2></div>
+        <p>Pasang &amp; update game hanya di tempat</p>
+      </div>
+      <div class="lokasi">
+        <div class="kotak">
+          <div class="radar-mini"><div class="grid-peta"></div><div class="rr"></div><div class="ping"></div><span>PS3 GAMING &middot; LOKASI</span></div>
+          <p style="color:var(--abu);font-size:.9rem">Mau pasang game atau update PS3? Bawa PS3 kamu ke titik berikut.</p>
+          <div class="koordinat"><svg><use href="#i-pin"/></svg><div><b>0°52'03.4"S 134°03'09.9"E</b><small>Titik lokasi pemasangan</small></div></div>
+          <ul class="daftar-cek">
+            <li><svg><use href="#i-cek"/></svg>Pasang game PS3</li>
+            <li><svg><use href="#i-cek"/></svg>Update PES / game bola</li>
+            <li><svg><use href="#i-cek"/></svg>Update PS3 ke 4.91, HEN, multiMAN</li>
+          </ul>
+          <div class="bawa-wrap"><div class="bawa-judul">Yang perlu dibawa</div>
+          <div class="bawa"><span>PS3</span><span>Kabel power</span><span>Stik</span><span>Hardisk (kalau ada)</span></div></div>
+          <div class="tombol-lokasi">
+            <a class="btn btn-utama" target="_blank" rel="noopener" href="https://www.google.com/maps?q=-0.867611,134.052750">Google Maps <svg><use href="#i-panah"/></svg></a>
+            <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/6282261865971?text=Halo%20PS3%20Gaming%2C%20saya%20mau%20datang%20untuk%20pasang%2Fupdate%20game.%20Kapan%20bisa%3F"><svg><use href="#i-wa"/></svg> 0822 6186 5971</a>
+          </div>
+        </div>
+        <div class="peta">
+          <iframe loading="lazy" title="Peta lokasi PS3 Gaming" src="https://maps.google.com/maps?q=-0.867611,134.052750&z=16&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><i></i>Website informasi &mdash; game tidak dijual online.<span class="panjang"> Pasang &amp; update langsung di lokasi.</span><span class="titik-ig"> &middot;</span> <a href="https://www.instagram.com/mhmd26____" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@mhmd26____</a></footer>
+
+<div class="fab">
+  <a class="ig" href="https://www.instagram.com/mhmd26____" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg><span>@mhmd26____</span></a>
+  <a class="wa" href="https://wa.me/6282261865971?text=Halo%20PS3%20Gaming%2C%20saya%20mau%20tanya%20soal%20pasang%2Fupdate%20game%20PS3." target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg><span>Chat WhatsApp</span></a>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-gbr" id="mGbr"></div>
+    <div class="modal-isi">
+      <span class="kecil-label" id="mKat"></span>
+      <h3 id="mNama"></h3>
+      <p id="mDesk"></p>
+      <div class="modal-kaki">
+        <div class="harga-besar" id="mHarga">Rp50K<small>Biaya pasang game</small></div>
+        <div class="modal-tombol">
+          <a class="btn btn-wa" id="mWa" target="_blank" rel="noopener" href="#"><svg><use href="#i-wa"/></svg> Tanya via WA</a>
+          <button class="btn btn-garis" id="mLokasi">Lokasi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data-game.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
